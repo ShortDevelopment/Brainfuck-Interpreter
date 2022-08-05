@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BrainfuckInterpreter": {
+      "commandName": "Project",
+      "commandLineArgs": "execute_file"
+    }
+  }
+}
