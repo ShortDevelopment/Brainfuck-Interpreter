@@ -1,4 +1,4 @@
-﻿namespace BrainfuckInterpreter
+﻿namespace Brainfuck.Interpreter
 {
     public enum OutputType
     {

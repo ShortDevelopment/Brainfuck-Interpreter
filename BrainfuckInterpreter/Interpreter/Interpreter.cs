@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace BrainfuckInterpreter
+namespace Brainfuck.Interpreter
 {
     public sealed class Interpreter
     {

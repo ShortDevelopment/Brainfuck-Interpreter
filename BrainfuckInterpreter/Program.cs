@@ -1,10 +1,10 @@
-﻿using BrainfuckInterpreter;
+﻿using Brainfuck.Interpreter;
+using Brainfuck.Jit;
 
 #if !DEBUG
 try
 {
 #endif
-Interpreter interpreter = new();
 // interpreter.OutputType = OutputType.Number;
 if (args.Length == 1)
 {
@@ -14,11 +14,14 @@ if (args.Length == 1)
         Console.Write("Enter file name: ");
         fileName = Console.ReadLine()!;
     }
-    interpreter.Run(File.ReadAllText(fileName));
+    IlJitCompiler jit = new(File.ReadAllText(fileName));
+    Action result = jit.Compile();
+    result();
 }
 else
 {
     bool running = true;
+    Interpreter interpreter = new();
     while (running)
     {
         string? code = Console.ReadLine();
